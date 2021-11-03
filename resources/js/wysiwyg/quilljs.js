@@ -1,20 +1,9 @@
-@extends('layouts.plantilla')
-
-@section("title","Home")
-
-@section('content')
-    <h1>ESTO ES EL HOME DE LA APLICACIÓN</h1>
-    
-@endsection
-
-<!-- 
-***************
 import Quill from "quill";
-import Toolbar from "quill/modules/toolbar";
+/*import Toolbar from "quill/modules/toolbar";
 import Snow from "quill/themes/snow";
 import Bold from "quill/formats/bold";
 import Italic from "quill/formats/italic";
-import Header from "quill/formats/header";
+import Header from "quill/formats/header";*/
 
 /*const q = new Quill("#editor",{
     "modules/toolbar" : Toolbar,
@@ -23,6 +12,7 @@ import Header from "quill/formats/header";
     "formats/italic": Italic,
     "formats/header": Header 
 });*/
+
 
 var toolbarOptions = [
     ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
@@ -44,19 +34,18 @@ var toolbarOptions = [
     ['clean']                                         // remove formatting button
   ];
   
-  var quill = new Quill('#editor', {
-    modules: {
-      toolbar: toolbarOptions
-    },
-    theme: 'snow'
-  });
+if(document.getElementById("editor")){
+    var quill = new Quill('#editor', {
+        modules: {
+          toolbar: toolbarOptions
+        },
+        theme: 'snow'
+    });
+}
+    
 
-  /*if(document.getElementById("contenido")){
-    document.getElementById("contenido").value=quill.addContainer.firsChild.innerHTML;
-}*/
 
-//quill.addContainer.firsChild.innerHTML;
 
 export default quill;
-***************
--->
+
+
