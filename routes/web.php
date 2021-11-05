@@ -17,5 +17,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get("/",HomeController::class)->name("home");
 
-Route::get("/post/create", [PostController::class, "create"])->name("post.create");
+/*Route::get("/post/create", [PostController::class, "create"])->name("post.create");
 Route::post("/post/store", [PostController::class, "store"])->name("post.store");
+Route::get("/post/show",[PostController::class, "show"])->name("post.show");
+Route::delete("post/delete/{id}",[PostController::class, "delete"])->name("post.delete");*/
+
+Route::resource("post", PostController::class);
