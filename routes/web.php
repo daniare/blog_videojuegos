@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +18,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get("/",HomeController::class)->name("home");
 
-/*Route::get("/post/create", [PostController::class, "create"])->name("post.create");
-Route::post("/post/store", [PostController::class, "store"])->name("post.store");
-Route::get("/post/show",[PostController::class, "show"])->name("post.show");
-Route::delete("post/delete/{id}",[PostController::class, "delete"])->name("post.delete");*/
-
 Route::resource("post", PostController::class);
+
+Route::resource("usuario", UsuarioController::class);

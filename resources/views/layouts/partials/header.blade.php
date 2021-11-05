@@ -13,7 +13,7 @@
                       <a class="nav-link active" aria-current="page" href="{{route('post.index')}}">Post</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Usuarios</a>
+                      <a class="nav-link active" aria-current="page" href="{{route('usuario.index')}}">Usuario</a>
                     </li>
                   </ul>
                   <form class="d-flex">
