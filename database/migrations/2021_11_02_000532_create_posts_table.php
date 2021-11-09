@@ -18,7 +18,7 @@ class CreatePostsTable extends Migration
             $table->string("titulo");
             $table->text("descripcion");
             $table->longText("contenido");
-            $table->string("imagen-cabecera")->nullable();
+            $table->string("imagen_cabecera")->nullable();
             $table->timestamps();
         });
     }

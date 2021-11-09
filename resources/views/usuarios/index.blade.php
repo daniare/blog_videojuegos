@@ -15,8 +15,8 @@
         </div>
     </div>
     <div class="row justify-content-centre">
-        <table class="table table-dark">
-            <thead>
+        <table class="table">
+            <thead class="table-dark">
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Img Perfil</th>
@@ -33,7 +33,7 @@
                 </tr>
             </thead>
             <tbody>
-        @foreach($usuarios as $usario)
+        @foreach($usuarios as $usuario)
                 <tr>
                     <th scope="row">{{$usuario->id}}</th>
                     <td>{{$usuario->img_perfil}}</td>
@@ -45,13 +45,13 @@
                     <td>{{$usuario->created_at}}</td>
                     <td>{{$usuario->updated_at}}</td>
                     <td>
-                        <form action="{{route('usuario.edit',$usuario)}}" method="post">
-                            @method("put")
-                            <button type="submit" class="btn btn-warning">
+                        
+                            <a class="btn btn-warning" href="{{route('usuario.edit',$usuario)}}">
                                 <img src="" alt="Actualizar"/>
-                            </button>
-                        </form>
+                            </a>
+                       
                         <form action="{{route('usuario.destroy',$usuario)}}" method="post">
+                            @csrf
                             @method("delete")
                             <button type="submit" class="btn btn-danger">
                                 <img src="" alt="Eliminar"/>

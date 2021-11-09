@@ -11,7 +11,8 @@ class Post extends Model
 
     protected $fillable = [
         "titulo",
+        "descripcion",
         "contenido",
-        "imagen-cabecera"
+        "imagen_cabecera"
     ];
 }
