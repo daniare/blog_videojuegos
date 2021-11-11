@@ -9,9 +9,7 @@
         <div class="col-3"> 
             <a href="{{route('home')}}" class="btn btn-danger"><- Volver</a>
         </div>
-        <div class="col-3 offset-6 text-right"> 
-            <a href="{{route('post.create')}}" class="btn btn-success">Crear</a>
-        </div>
+        
     </div>
     <br>
     <div class="row align-items-center">

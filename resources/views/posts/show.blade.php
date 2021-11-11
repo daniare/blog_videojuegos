@@ -21,6 +21,20 @@
         </div>
     </div>
     <br>
+    @if($usuario != null)
+        <p><a href="{{route('usuario.show',$usuario)}}">{{$usuario->nombre_usuario}}</a>
+    @else
+        <p>Anónimo
+    @endif
+    <br>
+    <pre> 
+    Fecha de creacion: {{$post->created_at}} 
+    Última actualización: {{$post->updated_at}}
+    </pre> 
+        </p>
+    <br>
+    @if(Auth::user())
+    @if (Auth::user()->id == $post->usuario_id)
     <div class="row">
         <div class="col offset-2">
             <form action="{{route('post.destroy',$post)}}" method="post">
@@ -39,5 +53,6 @@
             <a href="{{route('post.index')}}" class="btn btn-danger">Volver</a>
         </div>
     </div>
-    
+    @endif
+    @endif
 @endsection

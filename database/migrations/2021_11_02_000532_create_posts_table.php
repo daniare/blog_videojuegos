@@ -19,6 +19,10 @@ class CreatePostsTable extends Migration
             $table->text("descripcion");
             $table->longText("contenido");
             $table->string("imagen_cabecera")->nullable();
+            $table->unsignedBigInteger("usuario_id")->nullable();
+
+            //set null para que no se borre en cascada
+            $table->foreign("usuario_id")->references("id")->on("usuarios")->onDelete("set null");
             $table->timestamps();
         });
     }

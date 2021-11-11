@@ -1,4 +1,4 @@
-@section("title","{{$usuario->nombre_usuario}}")
+@section("title",{{$usuario->nombre_usuario}})
 
 @extends('layouts.plantilla')
 
@@ -34,7 +34,6 @@
         </p> 
     </div>
 </div>
-
 <div class="row">
     <div class="col">
         <a href="{{route('usuario.index')}}" class="btn btn-danger">Volver</a>

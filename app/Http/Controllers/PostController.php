@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePost;
 use App\Models\Post;
+use App\Models\Usuario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -36,15 +38,23 @@ class PostController extends Controller
         $post->titulo = $request->titulo;
         $post->descripcion= $request->descripcion;
         $post->contenido = $request->contenido;
-
+        $post->usuario_id=Auth::user()->id;
         $post->save();
+
         return redirect()->route("post.show",$post);
     }
 
 
     public function show(Post $post){
 
-        return view("posts/show", compact("post"));
+        $usuario=null;
+
+        if($post->usuario_id != null){
+            $usuario = Usuario::find($post->usuario_id);
+        }
+
+        return view("posts/show", compact("post","usuario"));
+       
     }
 
     public function destroy(Post $post){

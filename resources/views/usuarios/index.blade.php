@@ -24,7 +24,6 @@
                     <th scope="col">Nombre</th>
                     <th scope="col">Apellidos</th>
                     <th scope="col">Correo electrónico</th>
-                    <th scope="col">Contraseña ?</th>
                     <!--th scope="col">Rol</th>
                     <th scope="col">Confirmación</th-->
                     <th scope="col">F.Creación</th>
@@ -41,7 +40,6 @@
                     <td>{{$usuario->nombre}}</td>
                     <td>{{$usuario->apellidos}}</td>
                     <td>{{$usuario->email}}</td>
-                    <td>{{$usuario->password}}</td>
                     <td>{{$usuario->created_at}}</td>
                     <td>{{$usuario->updated_at}}</td>
                     <td>
@@ -57,6 +55,9 @@
                                 <img src="" alt="Eliminar"/>
                             </button>
                         </form>
+                        <a class="btn btn-primary" href="{{route('usuario.show',$usuario)}}">
+                            <img src="" alt="Ver"/>
+                        </a>
                     </td>
                 </tr>
         @endforeach

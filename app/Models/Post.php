@@ -15,4 +15,10 @@ class Post extends Model
         "contenido",
         "imagen_cabecera"
     ];
+
+     //Relacion con post
+     public function usuario(){
+
+        return $this->belongsTo("App\Models\Usuario");
+    }
 }

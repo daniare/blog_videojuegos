@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Usuario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UsuarioController extends Controller
 {
@@ -17,19 +18,21 @@ class UsuarioController extends Controller
 
     public function create(){
 
-        return view("usuarios/create");
+        return view("usuarios/register");
 
     }
 
+   
     public function store(Request $request){
 
         $usuario = new Usuario();
         
         $usuario->nombre_usuario = $request->nombre_usuario;
         $usuario->nombre= $request->nombre;
-        $usuario-> apellidos= $request->apellidos;
+        $usuario->apellidos= $request->apellidos;
         $usuario->email= $request->email;
         $usuario->password= $request->password;
+        $usuario->assignRole("Blogger");
 
         $usuario->save();
         return redirect()->route("usuario.show",$usuario);
