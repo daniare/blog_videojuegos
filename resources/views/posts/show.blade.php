@@ -33,6 +33,14 @@
     </pre> 
         </p>
     <br>
+    <div class="row">
+            @foreach ($post->categorias as $categoria)
+                <div class="col-1">
+                    {{$categoria->nombre}}
+                </div> 
+            @endforeach
+        
+    </div>
     @if(Auth::user())
     @if (Auth::user()->id == $post->usuario_id)
     <div class="row">

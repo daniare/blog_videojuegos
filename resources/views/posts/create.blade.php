@@ -47,6 +47,15 @@
         <div class="row">
           <input type="hidden" id="contenido" name="contenido" />
           <input type="hidden" id="imagen-cabecera" name="imagen-cabecera" value="no disponible"/>
+          <div class="col-9 offset-3">
+            <h2 class="h2">Categorias</h2>
+          </div>
+          @foreach ($categorias as $categoria)
+          <div class="col-2">
+            <input type="checkbox" name="categorias[]" id="categoria-{{$categoria->id}}" value="{{$categoria->id}}">
+            <label for="categoria{{$categoria->id}}">{{$categoria->nombre}}</label>
+          </div>
+          @endforeach
           <div class="col offset-3">
             <input type="submit" value="Guardar" onclick="muestra()" class="btn btn-success"/>
           </div>

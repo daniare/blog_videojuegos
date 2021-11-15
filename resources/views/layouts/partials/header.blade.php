@@ -17,6 +17,9 @@
                     <li class="nav-item">
                       <a class="nav-link active" aria-current="page" href="{{route('usuario.index')}}">Usuario</a>
                     </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="{{route('categoria.index')}}">Categoria</a>
+                    </li>
                     <!--Menu de usuario-->
                   <li class="nav-item"  style="margin-left: 80vw;">
                     <div class="dropdown">

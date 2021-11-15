@@ -6,6 +6,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\PerfilController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -40,6 +41,9 @@ Route::resource("usuario", UsuarioController::class);
 
 /*PERFIL*/
 Route::get("perfil",[PerfilController::class,"posts"])->name("perfil.posts");
+
+/*CATEGORIAS*/
+Route::resource('categoria', CategoriaController::class);
+
 /*AUTH*/
 Auth::routes();
-

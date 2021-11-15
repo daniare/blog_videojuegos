@@ -21,4 +21,8 @@ class Post extends Model
 
         return $this->belongsTo("App\Models\Usuario");
     }
+
+    public function categorias(){
+        return $this->belongsToMany("App\Models\Categoria","categoria_post");
+    }
 }

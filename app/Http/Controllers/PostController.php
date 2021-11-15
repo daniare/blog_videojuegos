@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePost;
+use App\Models\Categoria;
 use App\Models\Post;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
@@ -22,7 +23,10 @@ class PostController extends Controller
     }
 
     public function create(){
-        return view("posts.create");
+
+        $categorias = Categoria::all();
+
+        return view("posts.create", compact("categorias"));
     }
 
     /*public function store(StorePost $request){ 
@@ -39,8 +43,16 @@ class PostController extends Controller
         $post->descripcion= $request->descripcion;
         $post->contenido = $request->contenido;
         $post->usuario_id=Auth::user()->id;
-        $post->save();
 
+        $post->save();
+        
+        //Introducir varios datos a la vez
+        $post->categorias()->sync($request->categorias);
+        /*
+        Para introducir uno:
+        $post->categorias()->attach($request->categoria);
+        */
+        
         return redirect()->route("post.show",$post);
     }
 
